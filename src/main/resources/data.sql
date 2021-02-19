@@ -1,8 +1,8 @@
 INSERT INTO client (id, email, is_enabled, password, role, user_name)
 values
-(1, 'kuba@kuba.com', true, 'Kuba', null, 'Kuba'),
-(2, 'asia@asia.com', true, 'Asia', null, 'Asia'),
-(3, 'igor@igor.com', true, 'Igor', null, 'Igor');
+(1, 'kuba@kuba.com', true, '$2a$10$kZ3gF6h6WwQGYjuw373v5eCuOaWs.3GuKc5AkCqsHgZLsbR17GYGa', 'USER_ROLE', 'Kuba'),
+(2, 'asia@asia.com', true, 'Asia', 'USER_ROLE', 'Asia'),
+(3, 'igor@igor.com', true, 'Igor', 'USER_ROLE', 'Igor');
 
 insert into band (id, band_name, location, rating)
 values
@@ -15,7 +15,7 @@ values
 ('14/02/2021', 1, 1),
 ('05/06/2021', 1, 3);
 
-insert into comments (BAND_ID, COMMENT_CONTENT, LOGIN, RATING)
+insert into comments (band_Id, client_Id, comment_Text, rating)
 values
-(1, 'Najlepszy zespół na świecie', 'Rafał', 5),
-(1, 'Bardzo fajnie grają', 'Igor', 5);
+(1, 1, 'Najlepszy zespół na świecie', 5),
+(1, 2, 'Bardzo fajnie grają', 5);

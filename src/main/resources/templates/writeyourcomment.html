@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Write Your Comment</title>
+</head>
+<body>
+<h1>Please fill in to register:</h1>
+<form th:action="@{/comments/addcomment}" method="post">
+    Comment:
+    <input type="text" name="commentText">
+    Rating:
+    <input type="text" name="rating">
+    Band name:
+    <input type="text" name="bandName">
+    <input type="submit" value="Add Your Comment !">
+</form>
+</body>
+</html>
