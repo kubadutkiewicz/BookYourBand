@@ -4,6 +4,7 @@ import jak.dut.BookYourBand.model.Band;
 import jak.dut.BookYourBand.repository.BandRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -27,6 +28,8 @@ public class BandServiceImpl implements BandService{
 
     @Override
     public List<Band> getAllBands() {
-        return bandRepository.findAll();
+        List<Band> allBands = new ArrayList<>();
+        bandRepository.findAll().iterator().forEachRemaining(allBands::add);
+        return allBands;
     }
 }

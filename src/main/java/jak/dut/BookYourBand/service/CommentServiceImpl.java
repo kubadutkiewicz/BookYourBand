@@ -6,6 +6,7 @@ import jak.dut.BookYourBand.model.Comment;
 import jak.dut.BookYourBand.repository.CommentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,6 +36,8 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public List<Comment> findAllCommentsByBandId(Long bandId) {
-        return commentRepository.findAllByBandId(bandId);
+        List<Comment> allByBandId = new ArrayList<>();
+        commentRepository.findAllByBandId(bandId).iterator().forEachRemaining(allByBandId::add);
+        return allByBandId;
     }
 }

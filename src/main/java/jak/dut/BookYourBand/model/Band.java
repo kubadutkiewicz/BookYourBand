@@ -13,8 +13,7 @@ public class Band {
     private String location;
     private double rating;
 
-    public Band(Long id, String bandName, String location, double rating) {
-        this.id = id;
+    public Band(String bandName, String location, double rating) {
         this.bandName = bandName;
         this.location = location;
         this.rating = rating;

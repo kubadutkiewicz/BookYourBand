@@ -13,7 +13,7 @@ public class ClientTests {
     @Test
     public void shouldGetClientById() {
         ClientService clientService = mock(ClientService.class);
-        Client client = new Client((long) 1, "Kuba", "Kuba", "kuba@kuba.com", "ROLE_USER");
+        Client client = new Client((long) 1, "Kuba", "Kuba123", "kuba@kuba.com", "ROLE_USER");
 
         when(clientService.getClientById((long) 1)).thenReturn(client);
 
@@ -25,7 +25,7 @@ public class ClientTests {
     @Test
     public void shouldGetClientByName() {
         ClientService clientService = mock(ClientService.class);
-        Client client = new Client((long) 1, "Kuba", "Kuba", "kuba@kuba.com", "ROLE_USER");
+        Client client = new Client((long) 1, "Kuba", "Kuba123", "kuba@kuba.com", "ROLE_USER");
 
         when(clientService.getClientByName("Kuba")).thenReturn(client);
 
