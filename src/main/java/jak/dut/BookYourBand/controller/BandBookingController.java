@@ -7,9 +7,7 @@ import jak.dut.BookYourBand.repository.BandBookingRepository;
 import jak.dut.BookYourBand.service.BandBookingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,10 +23,10 @@ public class BandBookingController {
         this.bandBookingRepository = bandBookingRepository;
     }
 
-    @GetMapping("/choosedateandband")
+    @GetMapping("/dateandband")
     public String chooseDateAndBand(Model model) {
         model.addAttribute("bandBooking", new BandBooking());
-        return "choosedateandband";
+        return "dateandband";
     }
 
     @PostMapping("/reserve")
@@ -37,12 +35,14 @@ public class BandBookingController {
             return "bandreservation";
     }
 
-    @GetMapping("/booking")
-    public BandBooking getBookingById(Long bookingId) {
-        return bandBookingRepository.findBandBookingById(bookingId);
+    @GetMapping("/booking/{id}")
+    @ResponseBody
+    public BandBooking getBookingById(@PathVariable("id") Long id) {
+        return bandBookingRepository.findBandBookingById(id);
     }
 
     @GetMapping("/allbookings")
+    @ResponseBody
     public List<BandBooking> getAllBookings() {
         return bandBookingService.getAllBandBookings();
     }

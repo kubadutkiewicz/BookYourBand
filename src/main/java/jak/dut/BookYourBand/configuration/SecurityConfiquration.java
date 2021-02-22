@@ -33,10 +33,15 @@ public class SecurityConfiquration extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.headers().disable();
         http.authorizeRequests()
-                .antMatchers("/welcome").authenticated()
+                .antMatchers("/bandbooking").permitAll()
+                .antMatchers("/bandbooking/dateandband").hasRole("USER")
+                .antMatchers("/bandbooking/booking/{id}").hasRole("ADMIN")
+                .antMatchers("/bandbooking/allbookings").hasRole("ADMIN")
                 .antMatchers("/bands").permitAll()
                 .antMatchers("/bands/{id}").permitAll()
+                .antMatchers("/welcome").authenticated()
                 .antMatchers("/comments").permitAll()
+                .antMatchers("/comments/write").hasRole("USER")
                 .and()
                 .formLogin().defaultSuccessUrl("/welcome");
     }

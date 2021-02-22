@@ -45,9 +45,9 @@ public class ClientController {
     }
 
     @GetMapping("/token")
-    public String token(@RequestParam String value) {
-        Token byValue = tokenRepository.findByValue(value);
-        Client client = byValue.getClient();
+    public String tokenAuthorisation(@RequestParam String value) {
+        Token tokenWithValue = tokenRepository.findByValue(value);
+        Client client = tokenWithValue.getClient();
         client.setEnabled(true);
         clientRepository.save(client);
         return "welcome";

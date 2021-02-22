@@ -20,13 +20,13 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @GetMapping("/writeyourcomment")
+    @GetMapping("/write")
     public String writeYourComment(Model model) {
         model.addAttribute("comment", new Comment());
         return "writeyourcomment";
     }
 
-    @PostMapping("/addcomment")
+    @PostMapping("/add")
     public String addComment(CommentDto commentDto) throws BookingUnavailableBandException {
         commentService.addComment(commentDto);
         return "commentadded";

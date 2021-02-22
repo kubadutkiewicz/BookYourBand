@@ -5,8 +5,6 @@ import jak.dut.BookYourBand.exeption.BookingUnavailableBandException;
 import jak.dut.BookYourBand.model.Band;
 import jak.dut.BookYourBand.model.BandBooking;
 import jak.dut.BookYourBand.repository.BandBookingRepository;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

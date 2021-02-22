@@ -22,7 +22,7 @@ public class BandServiceImpl implements BandService{
 
     @Override
     public Band getBandByName(String bandName) {
-        return bandRepository.findBandByBandName(bandName).orElseThrow(()-> new IllegalArgumentException("Band with name not found"));
+        return bandRepository.findBandByBandName(bandName).orElseThrow(()-> new IllegalArgumentException("Band with name" + bandName + " not found"));
     }
 
     @Override

@@ -65,7 +65,7 @@ public class ClientService {
     }
 
     public Client getClientByName(String name) {
-        return clientRepository.findByUserName(name).orElseThrow();
+        return clientRepository.findByUserName(name).orElseThrow(()-> new IllegalArgumentException("Client with name: " + name + "not found."));
     }
 
 }

@@ -9,5 +9,4 @@ class BookYourBandApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

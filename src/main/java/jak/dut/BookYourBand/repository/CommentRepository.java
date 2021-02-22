@@ -1,6 +1,5 @@
 package jak.dut.BookYourBand.repository;
 
-import jak.dut.BookYourBand.dto.CommentDto;
 import jak.dut.BookYourBand.model.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
