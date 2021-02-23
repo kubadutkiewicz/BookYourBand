@@ -1,16 +1,18 @@
 package jak.dut.BookYourBand.dto;
 
+import java.time.LocalDate;
+
 public class BandBookingDto {
 
-    private final String date;
+    private final LocalDate date;
     private final String bandName;
 
-    public BandBookingDto(String date, String bandName) {
+    public BandBookingDto(LocalDate date, String bandName) {
         this.date = date;
         this.bandName = bandName;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 

@@ -12,8 +12,8 @@ values
 
 insert into band_Booking (date, band_id, client_id)
 values
-('14/02/2021', 1, 1),
-('05/06/2021', 1, 3);
+('2021-02-14', 1, 1),
+('2021-06-05', 1, 3);
 
 insert into comments (band_Id, client_Id, comment_Text, rating)
 values

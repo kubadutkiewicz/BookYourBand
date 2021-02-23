@@ -11,7 +11,7 @@ public class Comment {
     private Long id;
 
     private String commentText;
-    private Integer rating;
+    private Double rating;
 
     @ManyToOne
     private Client client;
@@ -22,8 +22,7 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(Long id, String commentText, Integer rating, Client client, Band band) {
-        this.id = id;
+    public Comment(String commentText, Double rating, Client client, Band band) {
         this.commentText = commentText;
         this.rating = rating;
         this.client = client;
@@ -46,11 +45,11 @@ public class Comment {
         this.commentText = commentText;
     }
 
-    public Integer getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 

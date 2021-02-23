@@ -1,6 +1,7 @@
 package jak.dut.BookYourBand.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class BandBooking {
@@ -8,7 +9,7 @@ public class BandBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String date;
+    private LocalDate date;
 
     @OneToOne
     private Client client;
@@ -16,7 +17,7 @@ public class BandBooking {
     @ManyToOne
     private Band band;
 
-    public BandBooking(String date, Client client, Band band) {
+    public BandBooking(LocalDate date, Client client, Band band) {
         this.date = date;
         this.client = client;
         this.band = band;
@@ -33,11 +34,11 @@ public class BandBooking {
         this.id = id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

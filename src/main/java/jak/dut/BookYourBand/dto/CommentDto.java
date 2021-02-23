@@ -3,10 +3,10 @@ package jak.dut.BookYourBand.dto;
 public class CommentDto {
 
     private final String commentText;
-    private final Integer rating;
+    private final Double rating;
     private final String bandName;
 
-    public CommentDto(String commentText, Integer rating, String bandName) {
+    public CommentDto(String commentText, Double rating, String bandName) {
         this.commentText = commentText;
         this.rating = rating;
         this.bandName = bandName;
@@ -16,7 +16,7 @@ public class CommentDto {
         return commentText;
     }
 
-    public Integer getRating() {
+    public Double getRating() {
         return rating;
     }
 

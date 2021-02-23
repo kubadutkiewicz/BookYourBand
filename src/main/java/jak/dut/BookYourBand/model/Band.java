@@ -11,9 +11,9 @@ public class Band {
     private Long id;
     private String bandName;
     private String location;
-    private double rating;
+    private Double rating;
 
-    public Band(String bandName, String location, double rating) {
+    public Band(String bandName, String location, Double rating) {
         this.bandName = bandName;
         this.location = location;
         this.rating = rating;
@@ -46,11 +46,11 @@ public class Band {
         this.location = location;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
