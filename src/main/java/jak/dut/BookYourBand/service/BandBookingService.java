@@ -14,5 +14,6 @@ public interface BandBookingService {
 
     List<BandBooking> getAllBandBookings();
 
+    List<BandBooking> getAllBandBookingsForBand(Long id);
 
 }

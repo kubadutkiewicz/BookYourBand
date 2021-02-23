@@ -7,6 +7,8 @@ import jak.dut.BookYourBand.model.BandBooking;
 import jak.dut.BookYourBand.repository.BandBookingRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -45,5 +47,10 @@ public class BandBookingServiceImpl implements BandBookingService {
         return bandBookingList;
     }
 
-
+    @Override
+    public List<BandBooking> getAllBandBookingsForBand(Long id) {
+        List<BandBooking> allBandBookingsByBandId = new ArrayList<>();
+        bandBookingRepository.findBandBookingByBandId(id).iterator().forEachRemaining(allBandBookingsByBandId::add);
+        return allBandBookingsByBandId;
+    }
 }

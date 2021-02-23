@@ -47,4 +47,9 @@ public class BandBookingController {
         return bandBookingService.getAllBandBookings();
     }
 
+    @GetMapping("/{id}")
+    @ResponseBody
+    public List<BandBooking> getAllBandBookingForBand(@PathVariable("id") Long bandId) {
+        return bandBookingService.getAllBandBookingsForBand(bandId);
+    }
 }
