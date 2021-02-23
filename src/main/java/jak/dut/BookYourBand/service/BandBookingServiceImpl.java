@@ -35,12 +35,14 @@ public class BandBookingServiceImpl implements BandBookingService {
 
     @Override
     public BandBooking getBandBookingById(Long id) {
-        return bandBookingRepository.findBandBookingById(id);
+        BandBooking bandBooking = bandBookingRepository.findBandBookingById(id);
+        return bandBooking;
     }
 
     @Override
     public List<BandBooking> getAllBandBookings() {
-        return bandBookingRepository.findAll();
+        List<BandBooking> bandBookingList = bandBookingRepository.findAll();
+        return bandBookingList;
     }
 
 

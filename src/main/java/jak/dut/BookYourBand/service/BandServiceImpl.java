@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BandServiceImpl implements BandService{
+public class BandServiceImpl implements BandService {
 
     private final BandRepository bandRepository;
 
@@ -18,12 +18,14 @@ public class BandServiceImpl implements BandService{
 
     @Override
     public Band getBandById(Long id) {
-        return bandRepository.findBandById(id);
+        Band band = bandRepository.findBandById(id);
+        return band;
     }
 
     @Override
     public Band getBandByName(String bandName) {
-        return bandRepository.findBandByBandName(bandName).orElseThrow(()-> new IllegalArgumentException("Band with name" + bandName + " not found"));
+        Band band = bandRepository.findBandByBandName(bandName).orElseThrow(() -> new IllegalArgumentException("Band with name" + bandName + " not found"));
+        return band;
     }
 
     @Override
