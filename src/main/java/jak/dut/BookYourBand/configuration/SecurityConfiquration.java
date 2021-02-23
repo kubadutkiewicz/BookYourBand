@@ -37,7 +37,6 @@ public class SecurityConfiquration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/bandbooking/dateandband").hasRole("USER")
                 .antMatchers("/bandbooking/booking/{id}").hasRole("ADMIN")
                 .antMatchers("/bandbooking/allbookings").hasRole("ADMIN")
-                .antMatchers("/bandbooking/{id}").hasRole("ADMIN")
                 .antMatchers("/bands").permitAll()
                 .antMatchers("/bands/{id}").permitAll()
                 .antMatchers("/welcome").authenticated()
