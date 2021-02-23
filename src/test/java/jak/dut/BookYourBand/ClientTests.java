@@ -13,25 +13,32 @@ public class ClientTests {
     @Test
     public void shouldGetClientById() {
         ClientService clientService = mock(ClientService.class);
-        Client client = new Client((long) 1, "Kuba", "Kuba123", "kuba@kuba.com", "ROLE_USER");
+        Client client = new Client("Kuba", "Kuba123", "kuba@gmail.com", "ROLE_USER");
 
         when(clientService.getClientById((long) 1)).thenReturn(client);
 
         Assert.assertEquals("Kuba", clientService.getClientById((long) 1).getUserName());
-        Assert.assertEquals("kuba@kuba.com", clientService.getClientById((long) 1).getEmail());
+        Assert.assertEquals("kuba@gmail.com", clientService.getClientById((long) 1).getEmail());
         Assert.assertEquals("ROLE_USER", clientService.getClientById((long) 1).getRole());
     }
 
     @Test
     public void shouldGetClientByName() {
         ClientService clientService = mock(ClientService.class);
-        Client client = new Client((long) 1, "Kuba", "Kuba123", "kuba@kuba.com", "ROLE_USER");
-
+        Client client = new Client("Kuba", "Kuba123", "kuba@gmail.com", "ROLE_USER");
         when(clientService.getClientByName("Kuba")).thenReturn(client);
 
         Assert.assertEquals("Kuba", clientService.getClientByName("Kuba").getUserName());
         Assert.assertEquals("ROLE_USER", clientService.getClientByName("Kuba").getRole());
-        Assert.assertEquals("kuba@kuba.com", clientService.getClientByName("Kuba").getEmail());
+        Assert.assertEquals("kuba@gmail.com", clientService.getClientByName("Kuba").getEmail());
     }
+
+//    private List<Client> listOfClientsForTests() {
+//        List<Client> listOfClients = new ArrayList<>();
+//        listOfClients.add(new Client("Kuba", "Kuba123", "kuba@gmail.com", "ROLE_USER"));
+//        listOfClients.add(new Client("Stefan", "Stefan123", "stefan@gmail.com", "ROLE_USER"));
+//        listOfClients.add(new Client("Franek", "Franek123", "franek@gmail.com", "ROLE_USER"));
+//        return listOfClients;
+//    }
 
 }

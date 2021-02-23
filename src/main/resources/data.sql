@@ -1,8 +1,8 @@
 INSERT INTO client (id, email, is_enabled, password, role, user_name)
 values
 (1, 'kuba@kuba.com', true, '$2a$10$kZ3gF6h6WwQGYjuw373v5eCuOaWs.3GuKc5AkCqsHgZLsbR17GYGa', 'ROLE_USER', 'Kuba'),
-(2, 'asia@asia.com', true, 'Asia', 'USER_ROLE', 'Asia'),
-(3, 'igor@igor.com', true, 'Igor', 'USER_ROLE', 'Igor');
+(2, 'asia@asia.com', true, 'Asia', 'ROLE_USER', 'Asia'),
+(3, 'igor@igor.com', true, 'Igor', 'ROLE_USER', 'Igor');
 
 insert into band (id, band_name, location, rating)
 values

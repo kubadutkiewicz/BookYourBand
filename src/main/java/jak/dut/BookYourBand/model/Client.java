@@ -20,8 +20,7 @@ public class Client implements UserDetails {
     private String role;
     private boolean isEnabled;
 
-    public Client(Long id, String userName, String password, String email, String role) {
-        this.id = id;
+    public Client(String userName, String password, String email, String role) {
         this.userName = userName;
         this.password = password;
         this.email = email;
