@@ -1,13 +1,11 @@
 package jak.dut.BookYourBand.service;
 
 import jak.dut.BookYourBand.dto.BandBookingDto;
-import jak.dut.BookYourBand.exeption.BookingUnavailableBandException;
 import jak.dut.BookYourBand.model.Band;
 import jak.dut.BookYourBand.model.BandBooking;
 import jak.dut.BookYourBand.repository.BandBookingRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +23,7 @@ public class BandBookingServiceImpl implements BandBookingService {
     }
 
     @Override
-    public void addBandBooking(BandBookingDto bandBookingDto) throws BookingUnavailableBandException {
+    public void addBandBooking(BandBookingDto bandBookingDto) {
         BandBooking newBooking = new BandBooking();
         newBooking.setDate(bandBookingDto.getDate());
         String bandName = bandBookingDto.getBandName();

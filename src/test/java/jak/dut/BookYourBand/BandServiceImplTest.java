@@ -15,7 +15,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -32,18 +32,21 @@ public class BandServiceImplTest {
         when(bandRepository.findAll()).thenReturn(listOfBandsForTests());
     }
 
-
     @Test
     public void shouldGetBandById() {
-        List<Band> listOfBands = bandService.getAllBands();
-        Long band = bandService.getBandById((long) 2).getId();
-        when(bandService.getBandById((long) 2)).thenReturn((Band) listOfBands);
+        when(bandService.getBandById((long) 1)).thenReturn(listOfBandsForTests().get(0));
 
-        Assert.assertEquals("Wpuszczeni w maliny", bandService.getBandById((long) 2).getBandName());
+        Assert.assertEquals("Jama", bandService.getBandById((long) 1).getBandName());
     }
 
     @Test
     public void shouldGetBandByNameTest() {
+        BandServiceImpl bandService = mock(BandServiceImpl.class);
+        Band band = new Band("Jama", "Ruda Slaska", 5.0);
+        when(bandService.getBandByName("Jama")).thenReturn(band);
+
+        Assert.assertEquals("Jama", bandService.getBandByName("Jama").getBandName());
+        Assert.assertEquals("Ruda Slaska", bandService.getBandByName("Jama").getLocation());
     }
 
     @Test

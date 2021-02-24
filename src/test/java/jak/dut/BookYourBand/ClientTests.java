@@ -16,9 +16,8 @@ public class ClientTests {
     @Test
     public void shouldGetClientById() {
         ClientService clientService = mock(ClientService.class);
-        Client client = new Client("Kuba", "Kuba123", "kuba@gmail.com", "ROLE_USER");
 
-        when(clientService.getClientById((long) 1)).thenReturn(client);
+        when(clientService.getClientById((long) 1)).thenReturn(listOfClientsForTests().get(0));
 
         Assert.assertEquals("Kuba", clientService.getClientById((long) 1).getUserName());
         Assert.assertEquals("kuba@gmail.com", clientService.getClientById((long) 1).getEmail());
@@ -28,8 +27,7 @@ public class ClientTests {
     @Test
     public void shouldGetClientByName() {
         ClientService clientService = mock(ClientService.class);
-        Client client = new Client("Kuba", "Kuba123", "kuba@gmail.com", "ROLE_USER");
-        when(clientService.getClientByName("Kuba")).thenReturn(client);
+        when(clientService.getClientByName("Kuba")).thenReturn(listOfClientsForTests().get(0));
 
         Assert.assertEquals("Kuba", clientService.getClientByName("Kuba").getUserName());
         Assert.assertEquals("ROLE_USER", clientService.getClientByName("Kuba").getRole());

@@ -31,6 +31,4 @@ public class BandController {
     public Band getBandById(@PathVariable("id") Long id) {
         return bandService.getBandById(id);
     }
-
-
 }

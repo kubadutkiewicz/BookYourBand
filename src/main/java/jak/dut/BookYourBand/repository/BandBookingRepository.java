@@ -13,5 +13,4 @@ public interface BandBookingRepository extends JpaRepository<BandBooking, Long> 
     BandBooking findBandBookingById(Long id);
 
     List<BandBooking> findBandBookingByBandId(@Param("bandId") Long bandId);
-
 }
